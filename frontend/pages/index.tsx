@@ -9,7 +9,15 @@ export default function Home() {
       process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
     console.log("Intentando conectar a:", backendUrl);
 
-    fetch(backendUrl)
+    fetch(backendUrl, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      credentials: "include",
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);

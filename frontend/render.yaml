@@ -10,3 +10,4 @@ services:
     nodeVersion: 18.x
     packageManager: npm
     healthCheckPath: /
+    autoDeploy: true

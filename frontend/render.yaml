@@ -3,7 +3,9 @@ services:
     name: portfolio-frontend
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: |
+      npm install
+      npm run build
     startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_BACKEND_URL
@@ -12,3 +14,7 @@ services:
     packageManager: npm
     healthCheckPath: /
     autoDeploy: true
+    disk:
+      name: npm-cache
+      mountPath: /opt/render/.npm
+      sizeGB: 1

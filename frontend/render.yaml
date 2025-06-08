@@ -1,9 +1,9 @@
 services:
   - type: web
     name: portfolio-frontend
-    env: static
+    env: node
     buildCommand: npm install && npm run build
-    staticPublishPath: out
+    startCommand: npm start
     envVars:
       - key: NEXT_PUBLIC_BACKEND_URL
         sync: false

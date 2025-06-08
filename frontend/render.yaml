@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: portfolio-frontend
+    env: static
+    buildCommand: npm install && npm run build && npm run export
+    staticPublishPath: out
+    envVars:
+      - key: NEXT_PUBLIC_BACKEND_URL
+        sync: false
+    nodeVersion: 18.x
+    packageManager: npm

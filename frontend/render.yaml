@@ -9,3 +9,4 @@ services:
         sync: false
     nodeVersion: 18.x
     packageManager: npm
+    healthCheckPath: /

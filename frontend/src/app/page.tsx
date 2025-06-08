@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl font-bold mb-4">
-        {error ? error : mensaje || "Cargando..."}
+        {error ? error : mensaje || "Reparando..."}
       </h1>
       <p className="text-sm text-gray-600">
         URL del backend:{" "}

@@ -24,29 +24,25 @@ const proyectos = [
 
 export default function ProyectosDestacados() {
   return (
-    <section id="proyectos" className="my-10">
-      <h2 className="text-xl md:text-2xl font-bold mb-6">
-        Proyectos Destacados
-      </h2>
-      <div className="flex flex-col gap-8">
+    <section id="proyectos" style={{ marginTop: "40px", marginBottom: "40px" }}>
+      <h2>Proyectos Destacados</h2>
+      <div className="project-list">
         {proyectos.map((proy) => (
-          <div
-            key={proy.nombre}
-            className="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden"
-          >
+          <div key={proy.nombre} className="project-item">
             <img
               src={proy.imagen}
               alt={proy.nombre}
-              className="w-full md:w-1/3 object-cover h-48 md:h-auto"
+              className="project-image"
             />
-            <div className="flex flex-col justify-between p-6 flex-1">
+            <div className="project-content">
               <div>
-                <h3 className="text-lg font-semibold mb-2">{proy.nombre}</h3>
-                <p className="text-gray-600 mb-4">{proy.descripcion}</p>
+                <h3 className="project-title">{proy.nombre}</h3>
+                <p className="project-description">{proy.descripcion}</p>
               </div>
               <a
                 href={proy.link}
-                className="self-end px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+                className="button"
+                style={{ alignSelf: "flex-end" }}
               >
                 Ver Proyecto
               </a>

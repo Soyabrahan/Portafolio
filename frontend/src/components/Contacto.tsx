@@ -1,38 +1,37 @@
 export default function Contacto() {
   return (
-    <section id="contacto" className="my-10">
-      <h2 className="text-xl md:text-2xl font-bold mb-4">Contacto</h2>
-      <p className="mb-6 text-gray-700 max-w-2xl">
+    <section id="contacto" style={{ marginTop: "40px", marginBottom: "40px" }}>
+      <h2>Contacto</h2>
+      <p style={{ marginBottom: "24px", maxWidth: "500px" }}>
         Estoy abierto a nuevas oportunidades, pasantías y colaboraciones. No
         dudes en contactarme a través del siguiente formulario:
       </p>
-      <form className="max-w-xl flex flex-col gap-4">
-        <div>
-          <label className="block mb-1 font-medium">Correo</label>
-          <input
-            type="email"
-            placeholder="Tu Correo"
-            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
-          />
+      <form
+        action="https://formspree.io/f/xgvykpev"
+        method="POST"
+        className="contact-form"
+      >
+        <div className="form-group">
+          <label className="form-label">Correo</label>
+          <input type="email" name="email" placeholder="Tu Correo" required />
         </div>
-        <div>
-          <label className="block mb-1 font-medium">Mensaje</label>
+        <div className="form-group">
+          <label className="form-label">Mensaje</label>
           <textarea
+            name="message"
             placeholder="Tu Mensaje"
-            className="w-full border rounded-lg px-3 py-2 h-24 outline-none focus:ring-2 focus:ring-blue-400"
+            style={{ height: "96px" }}
+            required
           />
         </div>
-        <div>
-          <label className="block mb-1 font-medium">Nombre</label>
-          <input
-            type="text"
-            placeholder="Tu Nombre"
-            className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-400"
-          />
+        <div className="form-group">
+          <label className="form-label">Nombre</label>
+          <input type="text" name="name" placeholder="Tu Nombre" required />
         </div>
         <button
           type="submit"
-          className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition self-start"
+          className="button"
+          style={{ marginTop: "8px", alignSelf: "flex-start" }}
         >
           Enviar
         </button>

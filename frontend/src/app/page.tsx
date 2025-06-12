@@ -8,9 +8,11 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <div
+      style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
       <Navbar />
-      <main className="max-w-7xl mx-auto px-4">
+      <main className="container">
         <Hero />
         <Tecnologias />
         <SobreMi />
@@ -18,6 +20,6 @@ export default function Home() {
         <Contacto />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

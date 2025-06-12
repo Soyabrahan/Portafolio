@@ -1,13 +1,30 @@
 export default function Footer() {
   return (
-    <footer className="w-full py-8 flex flex-col items-center gap-4 text-gray-500 mt-10">
-      <div className="flex gap-6 text-2xl">
-        {/* Reemplaza los spans por los íconos reales cuando los tengas */}
-        <span>🌐</span>
-        <span>📧</span>
-        <span>🐱</span>
+    <footer className="footer">
+      <div className="footer-icons">
+        <a
+          href="https://wa.me/584120187917"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/whatsaap.svg" alt="WhatsApp" className="w-6 h-6" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/abrahan-ramirez-0b10bb368/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/linkeding.svg" alt="LinkedIn" className="w-6 h-6" />
+        </a>
+        <a
+          href="https://github.com/Soyabrahan"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/github.svg" alt="GitHub" className="w-6 h-6" />
+        </a>
       </div>
-      <div className="text-sm">© 2025 Abrahan. All rights reserved.</div>
+      <div className="footer-text">© 2025 Abrahan. All rights reserved.</div>
     </footer>
   );
 }

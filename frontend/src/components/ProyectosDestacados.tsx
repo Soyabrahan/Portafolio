@@ -1,3 +1,7 @@
+"use client";
+
+import { AnimatedSection, AnimatedDiv } from "../components/AnimatedComponents";
+
 const proyectos = [
   {
     nombre: "Project Alpha",
@@ -22,13 +26,39 @@ const proyectos = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function ProyectosDestacados() {
   return (
-    <section id="proyectos" style={{ marginTop: "40px", marginBottom: "40px" }}>
+    <AnimatedSection
+      id="proyectos"
+      style={{ marginTop: "40px", marginBottom: "40px" }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <h2>Proyectos Destacados</h2>
-      <div className="project-list">
+      <AnimatedDiv className="project-list" variants={containerVariants}>
         {proyectos.map((proy) => (
-          <div key={proy.nombre} className="project-item">
+          <AnimatedDiv
+            key={proy.nombre}
+            className="project-item"
+            variants={itemVariants}
+          >
             <img
               src={proy.imagen}
               alt={proy.nombre}
@@ -47,9 +77,9 @@ export default function ProyectosDestacados() {
                 Ver Proyecto
               </a>
             </div>
-          </div>
+          </AnimatedDiv>
         ))}
-      </div>
-    </section>
+      </AnimatedDiv>
+    </AnimatedSection>
   );
 }

@@ -1,10 +1,19 @@
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Tecnologias from "../components/Tecnologias";
-import SobreMi from "../components/SobreMi";
-import ProyectosDestacados from "../components/ProyectosDestacados";
-import Contacto from "../components/Contacto";
-import Footer from "../components/Footer";
+
+const Hero = dynamic(() => import("../components/Hero"), { ssr: false });
+const Tecnologias = dynamic(() => import("../components/Tecnologias"), {
+  ssr: false,
+});
+const SobreMi = dynamic(() => import("../components/SobreMi"), { ssr: false });
+const ProyectosDestacados = dynamic(
+  () => import("../components/ProyectosDestacados"),
+  { ssr: false }
+);
+const Contacto = dynamic(() => import("../components/Contacto"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 
 export default function Home() {
   return (

@@ -1,6 +1,16 @@
+"use client";
+
+import { AnimatedSection } from "../components/AnimatedComponents";
+
 export default function Footer() {
   return (
-    <footer className="footer">
+    <AnimatedSection
+      className="footer"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+    >
       <div className="footer-icons">
         <a
           href="https://wa.me/584120187917"
@@ -25,6 +35,6 @@ export default function Footer() {
         </a>
       </div>
       <div className="footer-text">© 2025 Abrahan. All rights reserved.</div>
-    </footer>
+    </AnimatedSection>
   );
 }

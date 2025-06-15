@@ -1,3 +1,7 @@
+"use client";
+
+import { AnimatedSection, AnimatedDiv } from "../components/AnimatedComponents";
+
 const tecnologias = [
   {
     nombre: "HTML",
@@ -27,13 +31,38 @@ const tecnologias = [
   { nombre: "C++", icono: "/c++.svg" },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function Tecnologias() {
   return (
-    <section className="my-10">
+    <AnimatedSection
+      className="my-10"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
       <h2>Tecnologias</h2>
-      <div className="tech-grid">
+      <AnimatedDiv className="tech-grid" variants={containerVariants}>
         {tecnologias.map((tec) => (
-          <div key={tec.nombre} className="card">
+          <AnimatedDiv
+            key={tec.nombre}
+            className="card"
+            variants={itemVariants}
+          >
             {typeof tec.icono === "string" ? (
               <img src={tec.icono} alt={tec.nombre} className="tech-icon" />
             ) : (
@@ -42,9 +71,9 @@ export default function Tecnologias() {
               </span>
             )}
             <span className="tech-name">{tec.nombre}</span>
-          </div>
+          </AnimatedDiv>
         ))}
-      </div>
-    </section>
+      </AnimatedDiv>
+    </AnimatedSection>
   );
 }

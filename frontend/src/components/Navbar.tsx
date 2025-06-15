@@ -1,4 +1,14 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-title">Abrahan Portafolio</div>
@@ -25,11 +35,61 @@ export default function Navbar() {
             </a>
           </li>
         </ul>
-        <a href="#curriculum" className="button">
+        <a
+          href="/curriculum.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button"
+        >
           Currículum
         </a>
+        <button className="md:hidden navbar-toggle" onClick={toggleMobileMenu}>
+          ☰
+        </button>
       </div>
-      {/* Menú móvil (opcional, puedes agregarlo después) */}
+
+      {isMobileMenuOpen && (
+        <div className="mobile-menu md:hidden">
+          <ul className="mobile-menu-links">
+            <li>
+              <a
+                href="#inicio"
+                className="mobile-menu-link-item"
+                onClick={toggleMobileMenu}
+              >
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a
+                href="#sobremi"
+                className="mobile-menu-link-item"
+                onClick={toggleMobileMenu}
+              >
+                Sobre mi
+              </a>
+            </li>
+            <li>
+              <a
+                href="#proyectos"
+                className="mobile-menu-link-item"
+                onClick={toggleMobileMenu}
+              >
+                Proyectos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contacto"
+                className="mobile-menu-link-item"
+                onClick={toggleMobileMenu}
+              >
+                Contacto
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

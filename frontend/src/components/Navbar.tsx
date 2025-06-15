@@ -36,7 +36,7 @@ export default function Navbar() {
           </li>
         </ul>
         <a
-          href="/curriculum.pdf"
+          href="/Curriculum AbrahanRamirez28726764.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="button"

@@ -1,8 +1,8 @@
-# Abrahan's Portfolio
+# Abrahan Portafolio
 
 ## Descripción del Proyecto
 
-Este es un portfolio personal diseñado para mostrar mis proyectos, habilidades y permitir a los visitantes contactarme. Está construido con una arquitectura de microservicios, separando claramente el frontend y el backend para una mayor escalabilidad y mantenibilidad.
+Este es un portafolio personal diseñado para mostrar mis proyectos, habilidades y permitir a los visitantes contactarme. Está construido con una arquitectura de microservicios, separado en frontend y backend para una mayor escalabilidad y mantenibilidad.
 
 ## Estructura del Proyecto
 
@@ -35,5 +35,5 @@ El repositorio está dividido en dos directorios principales:
 
 ## Despliegue
 
-- **Frontend:** Desplegado en [Render](https://portafolioabrahan-fronted.onrender.com)
-- **Backend:** Desplegado en [Render](https://portafolioabrahan-backend.onrender.com)
+- **Frontend:** Desplegado en https://portafolioabrahan-fronted.onrender.com
+- **Backend:** Desplegado en https://portafolioabrahan-backend.onrender.com

@@ -29,7 +29,27 @@ const itemVariants = {
 };
 
 export default function ProyectosDestacados() {
-  const [proyectos, setProyectos] = useState<Proyecto[]>([]);
+  // Proyectos estáticos que se mostrarán inicialmente
+  const staticProyectos: Proyecto[] = [
+    {
+      id: 1001, // Un ID único para los proyectos estáticos
+      nombre: "Portafolio",
+      descripcion:
+        "Proyecto de pagina web que sirva como portafolio personal donde se puedan ver mis proyectos,informacion acerca de mi,y un formulario para comunicarse conmigo",
+      imagen: "/Portafolio.png", // Asegúrate de que esta imagen esté en tu carpeta public
+      link: "https://github.com/Soyabrahan/Portafolio",
+    },
+    {
+      id: 1002, // Otro ID único
+      nombre: "tres-en-linea-react",
+      descripcion:
+        "Proyecto en react para probar conocimientos realizando un 3 en linea",
+      imagen: "/3EnLinea.png", // Asegúrate de que esta imagen esté en tu carpeta public
+      link: "https://github.com/Soyabrahan/tres-en-linea-react",
+    },
+  ];
+
+  const [proyectos, setProyectos] = useState<Proyecto[]>(staticProyectos);
 
   useEffect(() => {
     const fetchProyectos = async () => {
@@ -37,9 +57,11 @@ export default function ProyectosDestacados() {
         const response = await axios.get<Proyecto[]>(
           "https://portafolioabrahan-backend.onrender.com/proyecto"
         );
-        setProyectos(response.data);
+        // Concatena los proyectos del backend después de los estáticos
+        setProyectos((prevProyectos) => [...prevProyectos, ...response.data]);
       } catch (error) {
         console.error("Error al obtener los proyectos:", error);
+        // Si hay un error, los proyectos estáticos seguirán mostrándose
       }
     };
 

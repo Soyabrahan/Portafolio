@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedSection, AnimatedDiv } from "../components/AnimatedComponents";
+import Image from "next/image";
 
 const tecnologias = [
   {
@@ -64,7 +65,13 @@ export default function Tecnologias() {
             variants={itemVariants}
           >
             {typeof tec.icono === "string" ? (
-              <img src={tec.icono} alt={tec.nombre} className="tech-icon" />
+              <Image
+                src={tec.icono}
+                alt={tec.nombre}
+                className="tech-icon"
+                width={30}
+                height={30}
+              />
             ) : (
               <span className="tech-icon flex items-center justify-center">
                 {tec.icono}

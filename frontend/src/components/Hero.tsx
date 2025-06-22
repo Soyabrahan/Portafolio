@@ -24,10 +24,7 @@ export default function Hero() {
                 <div className="hero-info-container">
                   <p className="hero-info">
                     Estudiante apasionado de Ingeniería Informática enfocado en
-                    el desarrollo de soluciones innovadoras.
-                    <br />
-                    Me encanta convertir problemas complejos en aplicaciones
-                    elegantes y fáciles de usar.
+                    el desarrollo de paginas web y soluciones innovadoras.
                   </p>
                 </div>
               </div>
